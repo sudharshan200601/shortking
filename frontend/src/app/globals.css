@@ -1,0 +1,329 @@
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Caveat:wght@600;700&display=swap');
+@import "tailwindcss";
+
+:root {
+  --sk-blue: #8FC5E5;
+  --sk-blue-light: #C8E4F5;
+  --sk-blue-pale: #EDF6FC;
+  --sk-blue-deep: #6DAACF;
+  --sk-ink: #080808;
+  --sk-cream: #F8F7F1;
+  --sk-cream-card: #FFFFFF;
+  --sk-cream-muted: #EFECE3;
+  --sk-yellow: #F5D84A;
+  --sk-yellow-hover: #EBCB28;
+  --sk-yellow-light: #FDF4C8;
+  --sk-muted: #4B5864;
+  --sk-red: #E14942;
+  --sk-green: #2B9348;
+}
+
+@theme {
+  --color-sk-blue: var(--sk-blue);
+  --color-sk-blue-light: var(--sk-blue-light);
+  --color-sk-blue-pale: var(--sk-blue-pale);
+  --color-sk-blue-deep: var(--sk-blue-deep);
+  --color-sk-ink: var(--sk-ink);
+  --color-sk-cream: var(--sk-cream);
+  --color-sk-cream-card: var(--sk-cream-card);
+  --color-sk-cream-muted: var(--sk-cream-muted);
+  --color-sk-yellow: var(--sk-yellow);
+  --color-sk-yellow-hover: var(--sk-yellow-hover);
+  --color-sk-yellow-light: var(--sk-yellow-light);
+  --color-sk-muted: var(--sk-muted);
+  --color-sk-red: var(--sk-red);
+  --color-sk-green: var(--sk-green);
+
+  --font-hand: 'Patrick Hand', 'Caveat', cursive, sans-serif;
+  --font-sans: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+body {
+  background-color: var(--sk-blue);
+  color: var(--sk-ink);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Tactile Editorial Shadows */
+.sk-shadow-xs {
+  box-shadow: 1.5px 1.5px 0px #080808;
+}
+
+.sk-shadow-sm {
+  box-shadow: 2px 2px 0px #080808;
+}
+
+.sk-shadow {
+  box-shadow: 3.5px 3.5px 0px #080808;
+}
+
+.sk-shadow-md {
+  box-shadow: 5px 5px 0px #080808;
+}
+
+.sk-shadow-lg {
+  box-shadow: 7px 7px 0px #080808;
+}
+
+.sk-shadow-xl {
+  box-shadow: 9px 9px 0px #080808;
+}
+
+.sk-shadow-yellow {
+  box-shadow: 4px 4px 0px #F5D84A;
+}
+
+/* Hand-drawn paper cards */
+.sk-card {
+  background-color: var(--sk-cream);
+  border: 2px solid #080808;
+  box-shadow: 4px 4px 0px #080808;
+  border-radius: 1rem;
+}
+
+.sk-card-white {
+  background-color: #FFFFFF;
+  border: 2px solid #080808;
+  box-shadow: 4px 4px 0px #080808;
+  border-radius: 1rem;
+}
+
+.sk-badge-yellow {
+  background-color: #F5D84A;
+  color: #080808;
+  border: 1.5px solid #080808;
+  box-shadow: 1.5px 1.5px 0px #080808;
+  font-weight: 700;
+}
+
+/* Handwritten annotation font helper */
+.font-hand {
+  font-family: var(--font-hand);
+}
+
+/* Custom interactive button press */
+.sk-pressable {
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.sk-pressable:hover {
+  transform: translate(-1.5px, -1.5px);
+  box-shadow: 5px 5px 0px #080808;
+}
+
+.sk-pressable:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px #080808;
+}
+
+/* Subtle Doodles & Physics Animations */
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-6px) rotate(1deg);
+  }
+}
+
+@keyframes floatReverse {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(5px) rotate(-1.5deg);
+  }
+}
+
+@keyframes starSpin {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.1);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+@keyframes scissorSnip {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-18deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(-18deg);
+  }
+}
+
+@keyframes paperPlaneGlide {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  30% {
+    transform: translate(8px, -5px) rotate(3deg);
+  }
+  70% {
+    transform: translate(-5px, 3px) rotate(-2deg);
+  }
+}
+
+/* Subtle hand-drawn cloud horizontal drifting */
+@keyframes cloudDriftA {
+  0% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(12px);
+  }
+}
+
+@keyframes cloudDriftB {
+  0% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(-10px);
+  }
+}
+
+@keyframes cloudDriftC {
+  0% {
+    transform: translateX(0px) translateY(0px);
+  }
+  100% {
+    transform: translateX(8px) translateY(-3px);
+  }
+}
+
+/* Subtle hand-drawn carrot floating / rotation */
+@keyframes carrotBobA {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  100% {
+    transform: translateY(-4px) rotate(1.5deg);
+  }
+}
+
+@keyframes carrotBobB {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  100% {
+    transform: translateY(5px) rotate(-2deg);
+  }
+}
+
+.animate-float-slow {
+  animation: floatSlow 5s ease-in-out infinite;
+}
+
+.animate-float-reverse {
+  animation: floatReverse 6s ease-in-out infinite;
+}
+
+.animate-star-spin {
+  animation: starSpin 20s linear infinite;
+}
+
+.animate-scissors {
+  animation: scissorSnip 2s ease-in-out infinite;
+}
+
+.animate-plane-glide {
+  animation: paperPlaneGlide 7s ease-in-out infinite;
+}
+
+.animate-cloud-drift-a {
+  animation: cloudDriftA 16s ease-in-out infinite alternate;
+}
+
+.animate-cloud-drift-b {
+  animation: cloudDriftB 22s ease-in-out infinite alternate;
+}
+
+.animate-cloud-drift-c {
+  animation: cloudDriftC 18s ease-in-out infinite alternate;
+}
+
+.animate-carrot-bob-a {
+  animation: carrotBobA 8s ease-in-out infinite alternate;
+}
+
+.animate-carrot-bob-b {
+  animation: carrotBobB 10s ease-in-out infinite alternate;
+}
+
+/* Subtle star sparkle breathing animation */
+@keyframes starPulseSubtle {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+}
+
+.animate-star-pulse-a {
+  animation: starPulseSubtle 4.5s ease-in-out infinite;
+}
+
+.animate-star-pulse-b {
+  animation: starPulseSubtle 5.5s ease-in-out 1.8s infinite;
+}
+
+.animate-star-pulse-c {
+  animation: starPulseSubtle 6s ease-in-out 3.2s infinite;
+}
+
+/* Hand-drawn scribble underline */
+.hand-drawn-underline {
+  position: relative;
+  display: inline-block;
+}
+
+.hand-drawn-underline::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 6px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 20' preserveAspectRatio='none'%3E%3Cpath d='M0,10 Q25,18 50,10 T100,10' stroke='%23080808' stroke-width='4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-size: 100% 100%;
+  pointer-events: none;
+}
+
+.hand-drawn-underline-yellow::after {
+  content: '';
+  position: absolute;
+  left: -4px;
+  right: -4px;
+  bottom: 0px;
+  height: 12px;
+  background-color: #F5D84A;
+  z-index: -1;
+  transform: rotate(-1deg);
+  border-radius: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

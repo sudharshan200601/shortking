@@ -1,0 +1,15 @@
+-- ============================================================
+-- SHORTKING OPTIONAL SEED DATA
+-- ============================================================
+--
+-- Development/test data can be added here.
+--
+-- Do not put real users, passwords, API keys,
+-- tokens or production secrets in this file.
+-- ============================================================
+
+-- Example:
+--
+-- insert into public.reserved_aliases (alias)
+-- values ('test')
+-- on conflict (alias) do nothing;

@@ -1,0 +1,32 @@
+{
+  "name": "@shortking/backend",
+  "version": "0.1.0",
+  "private": true,
+  "description": "ShortKing REST API Backend built with Fastify and TypeScript",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@fastify/cors": "^10.0.1",
+    "@shortking/shared": "*",
+    "@supabase/supabase-js": "^2.117.2",
+    "dotenv": "^16.4.7",
+    "fastify": "^5.2.1",
+    "ioredis": "^6.0.0",
+    "ua-parser-js": "^2.0.10",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@types/ioredis": "^4.28.10",
+    "@types/node": "^22.13.9",
+    "@types/ua-parser-js": "^0.7.39",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.2",
+    "vitest": "^5.0.2"
+  }
+}

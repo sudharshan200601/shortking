@@ -1,0 +1,30 @@
+{
+  "name": "shortking-monorepo",
+  "version": "0.1.0",
+  "private": true,
+  "description": "ShortKing - Modern developer-focused full-stack URL shortener monorepo",
+  "workspaces": [
+    "shared",
+    "backend",
+    "frontend"
+  ],
+  "scripts": {
+    "dev": "concurrently -k -p \"[{name}]\" -n \"Frontend,Backend,Tunnel\" -c \"cyan.bold,magenta.bold,green.bold\" \"npm:dev:frontend\" \"npm:dev:backend\" \"npm:dev:tunnel\"",
+    "dev:frontend": "npm run dev --workspace=@shortking/frontend",
+    "dev:backend": "npm run dev --workspace=@shortking/backend",
+    "dev:tunnel": "node scripts/tunnel.mjs",
+    "dev:tunnel:frontend": "node scripts/tunnel.mjs --port 3000",
+    "build:frontend": "npm run build --workspace=@shortking/frontend",
+    "build:backend": "npm run build --workspace=@shortking/backend",
+    "build:shared": "npm run build --workspace=@shortking/shared",
+    "build": "npm run build --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present",
+    "lint": "npm run lint --workspaces --if-present",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\"",
+    "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,json,md}\""
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.5",
+    "prettier": "^3.3.3"
+  }
+}
